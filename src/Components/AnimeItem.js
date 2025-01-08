@@ -157,7 +157,7 @@ const AnimeItemStyled = styled.div`
     }
 
     .details{
-        background-color: #fff;
+        background-color: black;
         border-radius: 20px;
         padding: 2rem;
         border: 5px solid #e5e7eb;
