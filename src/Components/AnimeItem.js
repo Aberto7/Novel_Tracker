@@ -10,12 +10,12 @@ function AnimeItem() {
     const [characters, setCharacters] = React.useState([])
     const [showMore, setShowMore] = React.useState(false)
 
-    //De-Structure the Anime
+    //destructure anime
     const {
-        title, synopsis,
-        trailer, duration, aired,
-        season, images, rank,
-        score, scored_by, popularity,
+        title, synopsis, 
+        trailer,duration,aired, 
+        season, images, rank, 
+        score,scored_by, popularity, 
         status, rating, source } = anime
 
     //get anime based on id
@@ -25,16 +25,16 @@ function AnimeItem() {
         setAnime(data.data)
     }
 
-    //Get Characters Pictures
+    //get characters
     const getCharacters = async (anime) => {
         const response = await fetch(`https://api.jikan.moe/v4/anime/${anime}/characters`)
         const data = await response.json()
         setCharacters(data.data)
+        console.log(data.data)
     }
 
 
-
-    //Initial Render
+    //initial render
     useEffect(() => {
         getAnime(id)
         getCharacters(id)
@@ -100,11 +100,9 @@ function AnimeItem() {
     )
 }
 
-
-
 const AnimeItemStyled = styled.div`
-    padding: 3rem 18rem;
-    background-color: #EDEDED;
+    padding: 2rem 12rem;
+    background-color: #1F2833;
     h1{
         display: inline-block;
         font-size: 3rem;
@@ -152,20 +150,24 @@ const AnimeItemStyled = styled.div`
             border: 5px solid #e5e7eb;
             padding: 1.5rem;
             border-radius: 10px;
-            background-color: #FFFFFF;
+            background-color: rgb(23, 15, 34);
         }
     }
 
     .details{
-        background-color: black;
+        background-color:rgb(23, 15, 34);
         border-radius: 20px;
         padding: 2rem;
         border: 5px solid #e5e7eb;
         .detail{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
             img{
-                border-radius: 7px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 5px;
             }
         }
         .anime-details{
@@ -187,14 +189,14 @@ const AnimeItemStyled = styled.div`
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-gap: 2rem;
-        background-color: #fff;
+        background-color: rgb(23, 15, 34);
         padding: 2rem;
         border-radius: 20px;
         border: 5px solid #e5e7eb;
         .character{
             padding: .4rem .6rem;
-            border-radius: 7px;
-            background-color: #EDEDED;
+            border-radius: 12px;
+            background-color:rgb(30, 19, 46);
             transition: all .4s ease-in-out;
             img{
                 width: 100%;
@@ -212,6 +214,5 @@ const AnimeItemStyled = styled.div`
         }
     }
 `;
-
 
 export default AnimeItem

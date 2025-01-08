@@ -36,7 +36,7 @@ function Homepage() {
             <header>
                 <div className="logo">
                     <h1>
-                        {rendered === 'popular' ? 'Popular Anime' : 
+                        {rendered === 'popular' ? " Aberto Studio " : 
                         rendered === 'airing' ? 'Airing Anime' : 'Upcoming Anime'}
                     </h1>
                 </div>
@@ -72,7 +72,7 @@ function Homepage() {
 }
 
 const HomepageStyled = styled.div`
-    background-color: #EDEDED;
+    background-color: #1F2833;
     header{
         padding: 2rem 5rem;
         width: 60%;
@@ -86,6 +86,7 @@ const HomepageStyled = styled.div`
             align-items: center;
             justify-content: center;
             margin-bottom: 2rem;
+            color: white;
         }
         .search-container{
             display: flex;
@@ -100,11 +101,12 @@ const HomepageStyled = styled.div`
                 outline: none;
                 border-radius: 30px;
                 font-size: 1.2rem;
-                background-color: #fff;
+                color: white;
+                background-color: rgb(30, 19, 46);
                 cursor: pointer;
                 transition: all .4s ease-in-out;
                 font-family: inherit;
-                border: 5px solid #e5e7eb;
+                border: 5px solid rgb(23, 15, 34);
             }
             form{
                 position: relative;
@@ -120,8 +122,9 @@ const HomepageStyled = styled.div`
                     outline: none;
                     border-radius: 30px;
                     font-size: 1.2rem;
-                    background-color: #fff;
-                    border: 5px solid #e5e7eb;
+                    color: white;
+                    background-color: rgb(30, 19, 46);
+                    border: 5px solid rgb(23, 15, 34);
                     transition: all .4s ease-in-out;
                 }
                 .input-control button{
